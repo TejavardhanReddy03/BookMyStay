@@ -21,7 +21,7 @@ const jwtSecret = 'thisisascret';
 const bucket = 'teja-hotelbooking-app';
 const port = process.env.PORT || 4000;
 app.use(cors({
-    origin : 'http://localhost:3000',
+    origin : 'https://bookmystay-myapp.onrender.com',
     credentials: true
 }));
 app.use(bodyParser.urlencoded({ extended: false }));
