@@ -14,7 +14,7 @@ import PlacePage from './components/PlacePage';
 import BookingPage from './components/BookingPage';
 import BookingsPage from './components/BookingsPage';
  
-axios.defaults.baseURL='https://localhost:4000'
+axios.defaults.baseURL='https://bookmystay-api.onrender.com'
 axios.defaults.withCredentials=true;
 function App() {
   return (
