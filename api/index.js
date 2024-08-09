@@ -19,6 +19,7 @@ require('dotenv').config({path: "./vars/.env"});
 const bcryptSalt = bcrypt.genSaltSync(10);
 const jwtSecret = 'thisisascret';
 const bucket = 'teja-hotelbooking-app';
+const port = process.env.PORT || 4000;
 app.use(cors({
     origin : 'http://localhost:3000',
     credentials: true
@@ -262,7 +263,7 @@ app.get('/bookings', async (req,res) => {
   const userData = await getUserDataFromReq(req);
   res.json( await Booking.find({user:userData.id}).populate('place') );
 });
-const options = {
+/*const options = {
     key: fs.readFileSync("server.key"),
     cert: fs.readFileSync("server.cert"),
 };
@@ -272,4 +273,5 @@ const options = {
 https.createServer(options, app)
     .listen(4000, function (req, res) {
         console.log("Server started at port 4000");
-    });
+    });*/
+const server = app.listen(port, () => console.log(`Example app listening on port ${port}!`));
